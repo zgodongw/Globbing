@@ -6,14 +6,14 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/21 15:38:15 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/21 18:42:24 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h> 
- #include<stdlib.h> 
- #include <sys/types.h> 
- #include <dirent.h>
+#include<stdlib.h> 
+#include <sys/types.h> 
+#include <dirent.h>
 #include "ft_list.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -94,10 +94,8 @@ int		starglob(char *name, char *str)
 		return (0);
 	}
 	else if (str[0] == '*')
-	{
 		if (ft_strstr(name, &(str[1])) != 0)
 			return (1);
-	}
 	return (0);
 }
 
@@ -107,6 +105,10 @@ int		quesglob(char *name, char *str)
 	{
 		if ((ft_strstr(name, &str[1]) != 0) && (ft_strlen(name) == ft_strlen(str)))
 			return (1);
+	}
+	else if ((str[0] != '?'))
+	{
+		//not done yet
 	}
 	return (0);
 }
@@ -124,7 +126,7 @@ int		globfunction(char *name, char *str)
 	return (0);
 }
 
-int main(int argc, char **argv) 
+int		main(int argc, char **argv) 
 {
 	char *curr_dir = NULL; 
 	DIR *dp = NULL; 
@@ -161,7 +163,6 @@ int main(int argc, char **argv)
 			list = addlink(list, dptr->d_name);
 			printf("%s\n", dptr->d_name);
 		}
-
 	}
 	freelist(&list);
     return 0; 
