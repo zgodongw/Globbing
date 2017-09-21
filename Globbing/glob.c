@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/21 15:21:30 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/21 15:38:15 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 	{
+		printf("SEGFAULT, you idiot!");
 		return (0);
 	}
 	list = NULL;
