@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 10:25:10 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/21 10:56:52 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 10:30:19 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list			*addlink(t_list *list, char *str);
+t_list			*frontaddlink(t_list *list, char *str);
+void			addlink(t_list **list, char *str);
 void			freelist(t_list **list);
 size_t			sizeoflist(t_list *list);
+void			printlist(t_list *list);
+
 
 #endif
