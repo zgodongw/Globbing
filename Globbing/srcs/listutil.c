@@ -1,4 +1,5 @@
 #include "ft_list.h"
+#include "globbing.h"
 
 size_t	sizeoflist(t_list *list)
 {

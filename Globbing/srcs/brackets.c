@@ -6,11 +6,13 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 12:03:22 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 12:03:33 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 12:09:16 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		braclose(char *str, char c, int i, int b)
+#include "globbing.h"
+
+static int		braclose(const char *str, char c, int i, int b)
 {
 	while (b && *(++str) && (i++))
 	{
@@ -25,7 +27,7 @@ static int		braclose(char *str, char c, int i, int b)
 	return (i);
 }
 
-int				brackets(char *str, char c)
+int				brackets(const char *str, char c)
 {
 	if (*str == c)
 		return (1);
