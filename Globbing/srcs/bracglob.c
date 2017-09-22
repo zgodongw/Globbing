@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:16 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 18:50:15 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 18:58:19 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,19 @@ static char		*letters(char *str)
 static char		*rangebrac(char *let)
 {
 	char		rep[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char		*buff = (char *)malloc(100); 
-
+	char		*buff = malloc(50);
+	char		*wait = malloc(50);
+	int			i = 0;
 	//Assume let = letter - letter
-	printf("%s\n", ft_strchr(rep, let[0]));//- ft_strnstr(rep, &let[2], 1);
-
-	return (buff);
+	
+	buff = ft_strchr(rep, let[0]);
+	while (buff[i] != let[2])
+	{
+		wait[i] = buff[i];
+		i++;
+	}
+	wait[i] = let[2];
+	return (wait);
 }
 
 int				bracglob(const char *name, char *str)
@@ -63,7 +70,7 @@ int				bracglob(const char *name, char *str)
 
 	k = 0;
 	let = letters(str);
-	rangebrac(let);
+	printf("%s\n", rangebrac(let));
 	/*if ((str[0] == '[') && (brackets(str, 0)) && let != NULL)
 	{
 		if ((ft_strstr(name, &str[BLOCKLEN]) != 0)
