@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:16 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 17:58:00 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 18:50:15 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,17 @@ static char		*letters(char *str)
 	return (tmp);
 }
 
+static char		*rangebrac(char *let)
+{
+	char		rep[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char		*buff = (char *)malloc(100); 
+
+	//Assume let = letter - letter
+	printf("%s\n", ft_strchr(rep, let[0]));//- ft_strnstr(rep, &let[2], 1);
+
+	return (buff);
+}
+
 int				bracglob(const char *name, char *str)
 {
 	int			k;
@@ -52,7 +63,8 @@ int				bracglob(const char *name, char *str)
 
 	k = 0;
 	let = letters(str);
-	if ((str[0] == '[') && (brackets(str, 0)) && let != NULL)
+	rangebrac(let);
+	/*if ((str[0] == '[') && (brackets(str, 0)) && let != NULL)
 	{
 		if ((ft_strstr(name, &str[BLOCKLEN]) != 0)
 	&& (ft_strlen(name) == (ft_strlen(str) - (BLOCKLEN - 1))))
@@ -66,6 +78,6 @@ int				bracglob(const char *name, char *str)
 				k++;
 			}
 		free(let);
-	}
+	}*/
 	return (0);
 }
