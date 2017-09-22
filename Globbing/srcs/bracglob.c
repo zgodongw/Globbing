@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:16 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 15:23:52 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 17:58:00 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static int		leninbrac(char *str)
 
 	i = 0;
 	while (str[i + 1] != ']')
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -35,7 +33,7 @@ static char		*letters(char *str)
 	i = 1;
 	k = 0;
 	tmp = (char *)malloc(sizeof(char) * leninbrac(str));
-	if ((str[0] == '[') && (brackets(str, 0)))
+	if ((str[0] == '[') && (brackets(str, 0)) && tmp != NULL)
 	{
 		while (str[i] != ']')
 		{
@@ -55,6 +53,7 @@ int				bracglob(const char *name, char *str)
 	k = 0;
 	let = letters(str);
 	if ((str[0] == '[') && (brackets(str, 0)) && let != NULL)
+	{
 		if ((ft_strstr(name, &str[BLOCKLEN]) != 0)
 	&& (ft_strlen(name) == (ft_strlen(str) - (BLOCKLEN - 1))))
 			while (k < leninbrac(str))
@@ -66,6 +65,7 @@ int				bracglob(const char *name, char *str)
 				}
 				k++;
 			}
-	free(let);
+		free(let);
+	}
 	return (0);
 }
