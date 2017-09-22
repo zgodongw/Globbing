@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   addlink.c                                          :+:      :+:    :+:   */
+/*   frontaddlink.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 11:16:07 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 11:28:31 by zgodongw         ###   ########.fr       */
+/*   Created: 2017/09/22 11:16:54 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/22 11:16:58 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void addlink(t_list **head, char *str)
+t_list		*frontaddlink(t_list *list, char *str)
 {
-	t_list *newNode;
-	t_list *temp;
+	t_list	*tmp;
 
-	newNode = (t_list *)malloc(sizeof(t_list));
-	newNode->str = str;
-	newNode->next = NULL;
-	temp = *head;
-	if (*head == NULL)
-		*head = newNode;
-	else
+	tmp  = (t_list *)malloc(sizeof(t_list));
+	if (tmp)
 	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = newNode;
+		tmp->str = str;
+		tmp->next = list;
 	}
+	return (tmp);
 }
-

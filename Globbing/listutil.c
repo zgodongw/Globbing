@@ -18,3 +18,12 @@ void	freelist(t_list **list)
 	free(*list);
 	*list = NULL;
 }
+
+void	printlist(t_list *list)
+{
+	while (list)
+	{
+		printf("%s\n", list->str);
+		list = list->next;		
+	}
+}
