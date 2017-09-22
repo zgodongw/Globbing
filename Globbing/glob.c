@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/21 18:42:24 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 11:29:23 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,15 @@ int		quesglob(char *name, char *str)
 	}
 	else if ((str[0] != '?'))
 	{
-		//not done yet
+		if (((ft_strncmp(name, str, ft_strlen(str) - 1)) == 0) && (ft_strlen(name) == ft_strlen(str)))
+			return (1);
 	}
+	return (0);
+}
+
+int		bracglob(char *name, char *str)
+{
+	//one more for me
 	return (0);
 }
 
@@ -160,10 +167,11 @@ int		main(int argc, char **argv)
 	{
 		if ((globfunction(dptr->d_name, argv[1]) == 1))
 		{
-			list = addlink(list, dptr->d_name);
-			printf("%s\n", dptr->d_name);
+			addlink(&list, dptr->d_name);
 		}
 	}
+	printf("List Size: %d\n", (int)sizeoflist(list));
+	printlist(list);
 	freelist(&list);
-    return 0; 
- }
+    return 0;
+}
