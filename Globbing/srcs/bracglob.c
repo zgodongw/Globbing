@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:16 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 14:46:22 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/22 15:23:52 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "ft_list.h"
 #define BLOCKLEN (leninbrac(str) + 2)
 
-static int leninbrac(char *str)
+static int		leninbrac(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (str[i + 1] != ']')
@@ -26,12 +26,12 @@ static int leninbrac(char *str)
 	return (i);
 }
 
-static char *letters(char *str)
+static char		*letters(char *str)
 {
-	int	i;
-	char *tmp;
-	int k;
-	
+	int			i;
+	int			k;
+	char		*tmp;
+
 	i = 1;
 	k = 0;
 	tmp = (char *)malloc(sizeof(char) * leninbrac(str));
@@ -40,22 +40,23 @@ static char *letters(char *str)
 		while (str[i] != ']')
 		{
 			tmp[k] = str[i];
-			k++; i++;
+			k++;
+			i++;
 		}
 	}
 	return (tmp);
 }
 
-int		bracglob(const char *name, char *str)
+int				bracglob(const char *name, char *str)
 {
-	int k = 0;
-	char *let;
+	int			k;
+	char		*let;
 
+	k = 0;
 	let = letters(str);
 	if ((str[0] == '[') && (brackets(str, 0)) && let != NULL)
-	{
-		if ((ft_strstr(name, &str[BLOCKLEN]) != 0) && (ft_strlen(name) == (ft_strlen(str) - (BLOCKLEN - 1))))
-		{
+		if ((ft_strstr(name, &str[BLOCKLEN]) != 0)
+	&& (ft_strlen(name) == (ft_strlen(str) - (BLOCKLEN - 1))))
 			while (k < leninbrac(str))
 			{
 				if (name[0] == let[k])
@@ -65,8 +66,6 @@ int		bracglob(const char *name, char *str)
 				}
 				k++;
 			}
-		}
-	}
 	free(let);
 	return (0);
 }
