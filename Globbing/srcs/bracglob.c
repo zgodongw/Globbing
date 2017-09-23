@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:16 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 16:22:25 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 17:35:27 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int				abstraction(const char *name, char *str, char *let)
 	{
 		if ((ft_strstr(name, &str[BLOCKLEN]) != 0)
 	&& (ft_strlen(name) == (ft_strlen(str) - (BLOCKLEN - 1))))
-			while (k < strlen(let))
+			while (k < (int)ft_strlen(let))
 			{
 				if (name[0] == let[k])
 				{

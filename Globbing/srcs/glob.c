@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 16:55:52 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 17:35:48 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ t_list	*globinit(char *argv)
 	char *curr_dir = NULL; 
 	DIR *dp = NULL; 
 	struct dirent *dptr = NULL;
-	char	**name;
 	t_list *list;
 
 	list = NULL;

@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 17:07:29 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 17:11:31 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 17:36:25 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	printlist(t_list *list)
 char	**listtoarray(t_list *list)
 {
 	char	**name;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	name = (char **)malloc(sizeof(char *) * sizeoflist(list));
