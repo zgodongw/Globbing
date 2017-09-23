@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 12:01:04 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 09:45:06 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,22 @@ char	*ft_strstr(const char *s1, const char *s2)
 		i++;
 	}
 	return (0);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	char *str;
+
+	str = (char *)s;
+	while (*str != c)
+	{
+		if (*str == '\0')
+		{
+			return (NULL);
+		}
+		str++;
+	}
+	return (str);
 }
 
 int		main(int argc, char **argv) 
