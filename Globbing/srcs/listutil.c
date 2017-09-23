@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   listutil.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 17:07:29 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/23 17:11:31 by zgodongw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_list.h"
 #include "globbing.h"
 
@@ -25,7 +37,7 @@ void	printlist(t_list *list)
 	while (list)
 	{
 		printf("%s\n", list->str);
-		list = list->next;		
+		list = list->next;
 	}
 }
 
@@ -39,6 +51,7 @@ char	**listtoarray(t_list *list)
 	while (list && i < sizeoflist(list))
 	{
 		name[i] = list->str;
+		list = list->next;
 		i++;
 	}
 	freelist(&list);

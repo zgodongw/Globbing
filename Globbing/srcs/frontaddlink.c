@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 11:16:54 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 11:16:58 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 17:03:24 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list		*frontaddlink(t_list *list, char *str)
 {
 	t_list	*tmp;
 
-	tmp  = (t_list *)malloc(sizeof(t_list));
+	tmp = (t_list *)malloc(sizeof(t_list));
 	if (tmp)
 	{
 		tmp->str = str;

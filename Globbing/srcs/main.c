@@ -6,14 +6,14 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 16:40:10 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 16:57:20 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 17:12:48 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include "globbing.h"
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_list	*list;
 
