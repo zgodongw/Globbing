@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 09:45:06 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/23 16:55:52 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,45 +78,32 @@ char	*ft_strchr(const char *s, int c)
 	return (str);
 }
 
-int		main(int argc, char **argv) 
+t_list	*globinit(char *argv)
 {
 	char *curr_dir = NULL; 
 	DIR *dp = NULL; 
 	struct dirent *dptr = NULL;
+	char	**name;
 	t_list *list;
 
-	if (argc < 2)
-	{
-		printf("SEGFAULT, you idiot!");
-		return (0);
-	}
 	list = NULL;
-	
-	// Get the value of environment variable PWD
 	curr_dir = getenv("PWD");
 	if (NULL == curr_dir)
 	{
 		printf("\nERROR : Could not get the working directory\n");
-		return -1;
+		return NULL;
 	}
-
-	// Open the current directory 
 	dp = opendir((const char*)curr_dir);
 	if(NULL == dp)
 	{
 		printf("\n ERROR : Could not open the working directory\n");
-		return -1;
+		return NULL;
 	}
-	
 	while ((dptr = readdir(dp)) != NULL)
 	{
-		if ((globfunction(dptr->d_name, argv[1]) == 1))
-		{
+		if ((globfunction(dptr->d_name, argv) == 1))
 			addlink(&list, dptr->d_name);
-		}
 	}
-	printf("List Size: %d\n", (int)sizeoflist(list));
-	printlist(list);
-	freelist(&list);
-    return 0;
+	//name = listtoarray(list); //remember to free
+    return list;
 }

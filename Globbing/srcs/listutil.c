@@ -28,3 +28,19 @@ void	printlist(t_list *list)
 		list = list->next;		
 	}
 }
+
+char	**listtoarray(t_list *list)
+{
+	char	**name;
+	int		i;
+
+	i = 0;
+	name = (char **)malloc(sizeof(char *) * sizeoflist(list));
+	while (list && i < sizeoflist(list))
+	{
+		name[i] = list->str;
+		i++;
+	}
+	freelist(&list);
+	return (name);
+}
