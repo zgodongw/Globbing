@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 11:55:45 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 16:55:00 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/24 09:23:15 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		quesglob(const char*, char*);
 int		bracglob(const char*, char*);
 int		globfunction(const char*, char*);
 int		brackets(const char*, char);
-char	**listtoarray(t_list*);
+char	**listtoarray(t_list**);
 t_list	*globinit(char *);
 
 # endif
