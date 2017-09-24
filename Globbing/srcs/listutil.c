@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 17:07:29 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 17:36:25 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/24 09:27:15 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,21 @@ void	printlist(t_list *list)
 	}
 }
 
-char	**listtoarray(t_list *list)
+char	**listtoarray(t_list **list)
 {
 	char	**name;
 	size_t	i;
+	t_list *tmp;
 
+	tmp = *list;
 	i = 0;
-	name = (char **)malloc(sizeof(char *) * sizeoflist(list));
-	while (list && i < sizeoflist(list))
+	name = (char **)malloc(sizeof(char *) * sizeoflist(tmp));
+	while (tmp)
 	{
-		name[i] = list->str;
-		list = list->next;
+		name[i] = tmp->str;
+		tmp = tmp->next;
 		i++;
 	}
-	freelist(&list);
+	free(tmp);
 	return (name);
 }
