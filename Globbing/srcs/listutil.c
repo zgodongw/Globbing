@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 17:07:29 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/24 09:27:15 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/25 11:45:06 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,27 @@ char	**listtoarray(t_list **list)
 	}
 	free(tmp);
 	return (name);
+}
+
+t_list	*newelement(char *text)
+{
+	t_list *newp;
+
+	newp = (t_list *)malloc(sizeof(t_list));
+	newp->str = text;
+	newp->next = NULL;
+	return (newp);
+}
+
+t_list	*addend(t_list *head, t_list *newp)
+{
+	t_list	*p2;
+
+	p2 = head;
+	if (p2 == NULL)
+		return (newp);
+	while (p2->next != NULL)
+		p2 = p2->next;
+	p2->next = newp;
+	return (head);
 }
