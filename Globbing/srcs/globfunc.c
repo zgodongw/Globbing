@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 17:06:35 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 17:06:44 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/25 15:28:53 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int		globfunction(const char *name, char *str)
 			return (1);
 	if (isglob(str) == 3)
 		if (bracglob(name, str) == 1)
+			return (1);
+	if (isglob(str) == 4)
+		if (curlyglob(name, str) == 1)
 			return (1);
 	return (0);
 }
