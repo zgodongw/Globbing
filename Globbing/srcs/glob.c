@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:21:28 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/25 12:29:26 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/25 14:37:48 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char				**globinit(char *argv)
 		return NULL;
 	while ((this.dptr = readdir(this.dp)) != NULL)
 		if ((globfunction(this.dptr->d_name, argv) == 1))
+		{
 			this.names = ft_add_to_array(this.names, this.dptr->d_name);
+		}
     return this.names;
 }
