@@ -6,19 +6,19 @@
 #    By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/22 12:27:30 by zgodongw          #+#    #+#              #
-#    Updated: 2017/09/23 16:49:00 by zgodongw         ###   ########.fr        #
+#    Updated: 2017/09/25 16:10:22 by zgodongw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = glob
 
-SRCS = ./srcs/*.c
+SRCS = ./srcs/*.c ./minilib/*.c
 
 INC = -I includes
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra -o
+FLAGS = -Wall -Werror -Wextra -g -g3 -o
 
 $(NAME): all
 
