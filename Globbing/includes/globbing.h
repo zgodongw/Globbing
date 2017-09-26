@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 11:55:45 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/25 11:34:56 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/25 18:22:10 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/types.h> 
 # include <dirent.h>
 # include <string.h>
+# include <unistd.h>
 # include "ft_list.h"
 
 int		ft_strcmp(const char *s1, const char *s2);
@@ -30,6 +31,7 @@ int		ft_isalnumextended(char);
 int		starglob(const char*, char*);
 int		quesglob(const char*, char*);
 int		bracglob(const char*, char*);
+int		curlyglob(const char*, char*);
 int		globfunction(const char*, char*);
 int		brackets(const char*, char);
 char	**listtoarray(t_list**);
