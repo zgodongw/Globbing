@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 14:02:03 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/23 17:13:56 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/26 12:50:42 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 int		quesglob(const char *name, char *str)
 {
-	if (str[0] == '?')
+	int i;
+
+	i = 0;
+	if (ft_strlen(name) == ft_strlen(str))
 	{
-		if ((ft_strstr(name, &str[1]) != 0)
-				&& (ft_strlen(name) == ft_strlen(str)))
-			return (1);
-	}
-	else if ((str[0] != '?'))
-	{
-		if (((ft_strncmp(name, str, ft_strlen(str) - 1)) == 0)
-				&& (ft_strlen(name) == ft_strlen(str)))
-			return (1);
+		while (name[i] != '\0')
+		{
+			if (str[i] != '?')
+				if (str[i] != name[i])
+					return (0);
+			i++;
+		}
+		return (1);
 	}
 	return (0);
 }
